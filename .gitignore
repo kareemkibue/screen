@@ -1,0 +1,22 @@
+syntax: glob
+.vagrant\machines\default\virtualbox\
+Vagrantfile
+bootstrap.sh
+
+#Project files
+.sass-cache/*
+node_modules/
+bower_components/
+*.sublime-workspace
+
+#Auto-generate files
+css/*.css.map
+
+#Hidden system files
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
+
+#Conflict files
+css/*.orig
+*.orig
