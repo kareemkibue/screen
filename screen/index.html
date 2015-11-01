@@ -1,44 +1,24 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Browser Viewport Test</title>
+	<meta charset="utf-8">
+	<title>Browser Viewport</title>
+
+	<link rel="stylesheet" type="text/css" href="styles/screen.css">
+	<script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+	<script src="scripts/screen-webfont.js"></script>	
 </head>
 
 <body>
-<script type="text/javascript">
-<!--
- 
- var viewportwidth;
- var viewportheight;
-  
- // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
-  
- if (typeof window.innerWidth != 'undefined')
- {
-      viewportwidth = window.innerWidth,
-      viewportheight = window.innerHeight
- }
-  
-// IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
- 
- else if (typeof document.documentElement != 'undefined'
-     && typeof document.documentElement.clientWidth !=
-     'undefined' && document.documentElement.clientWidth != 0)
- {
-       viewportwidth = document.documentElement.clientWidth,
-       viewportheight = document.documentElement.clientHeight
- }
-  
- // older versions of IE
-  
- else
- {
-       viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
-       viewportheight = document.getElementsByTagName('body')[0].clientHeight
- }
-document.write('<p>Your viewport width is '+viewportwidth+'x'+viewportheight+'</p>');
-//-->
-</script>
+	<div class="wrapper">
+		<div>
+			<div>
+				<span id="content" class="content"></span>
+			</div>
+		</div>
+	</div>
+
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="scripts/screen.js"></script>	
 </body>
 </html>
