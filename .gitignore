@@ -10,7 +10,7 @@ bower_components/
 *.sublime-workspace
 
 #Auto-generate files
-css/*.css.map
+styles/*.css.map
 
 #Hidden system files
 *.DS_Store
@@ -18,5 +18,5 @@ css/*.css.map
 *.Trashes
 
 #Conflict files
-css/*.orig
+styles/*.orig
 *.orig

@@ -1,13 +1,24 @@
-*{
-	margin: 0;
-	padding: 0;
-}
+@import "vendor/normalize-css/normalize";
+@import "compass/css3";
+@import "custom/media";
+// @import "custom/custom-mixins";
+// @import "custom/custom-classes";
 
 body{
 	font-size: 128px;
 	background: #fff;
 	font-weight: 600;
 	font-family: "Open Sans", "Helvetica";
+
+	@include respond-max(580px){
+		font-size: 100px;
+	}
+	@include respond(screen-xxs){
+		font-size: 80px;	
+	}
+	@include respond-max(360px){
+		font-size: 60px;
+	}
 }
 
 .wrapper{
@@ -16,18 +27,18 @@ body{
 	left: 0;
 	right: 0;
 	bottom: 0;
-}
 
-.wrapper > div{
-	display: table;
-	width: 100%;
-	height: 100%;
-}
+	& > div{
+		display: table;
+		width: 100%;
+		height: 100%;
 
-.wrapper > div > div{
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
+		& > div{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+	}
 }
 
 .wrapper .content > span{
