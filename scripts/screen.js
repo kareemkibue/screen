@@ -12,8 +12,11 @@ function renderInfo(){
 	$('#dimensions').html( dimensions );	
 
 	// Render All Other Info	
-	var info = '<em>Orientation:</em> ' + getOrientation() + '<br>';
-	info += '';
+	var info = 'Orientation: <strong>' + getOrientation() + '</strong><br>';
+	// info += 'Device Category: <strong>Desktop</strong>' + '<br>';
+	// info += 'Operating System: <strong>Android</strong>' + '<br>';
+	// info += 'Browser: <strong>Firefox v42.0.5</strong>' + '<br>';
+	// info += 'This is <strong>NOT</strong> a touch device';
 	$('#info').html( info );
 }
 
