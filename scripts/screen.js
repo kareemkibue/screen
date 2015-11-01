@@ -1,20 +1,31 @@
 $(document).ready(function() {
-	renderViewport();	
+	renderInfo();	
 });
 
 $(window).resize(function() {
-	renderViewport();
+	renderInfo();
 });
 
-function renderViewport(){
+function renderInfo(){		
+	// Render Dimensions
 	var dimensions = getWidth() + ' <span>x</span> ' + getHeight() + '';
-	$('#content').html( dimensions );	
+	$('#dimensions').html( dimensions );	
 
-	function getWidth(){
-		return $(window).width();
-	}
+	// Render All Other Info	
+	var info = '<em>Orientation:</em> ' + getOrientation() + '<br>';
+	info += '';
+	$('#info').html( info );
+}
 
-	function getHeight(){
-		return $(window).height();
-	}
+function getOrientation(){
+	if ( getWidth() >= getHeight() ) return 'Landscape'
+	else return 'Portrait';
+}
+
+function getWidth(){
+	return $(window).width();
+}
+
+function getHeight(){
+	return $(window).height();
 }

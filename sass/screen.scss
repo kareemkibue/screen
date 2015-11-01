@@ -13,7 +13,7 @@ body{
 	background: #fff;
 	font-weight: 600;
 	font-family: "Open Sans", "Helvetica";
-	line-height: 1.5;
+	line-height: 1.2;
 
 	@include respond-max(580px){
 		font-size: 30px;
@@ -49,17 +49,16 @@ body{
 .wrapper .content{
 	font-size: em(128px);
 
-	/* @include respond-max(580px){
-		font-size: 100px;
-	}
-	@include respond(screen-xxs){
-		font-size: 80px;	
-	}
-	@include respond-max(360px){
-		font-size: 60px;
-	} */
-
 	> span{
 		font-size: 80%;
 	}
+}
+
+.wrapper .info{
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin-top: 20px;
+	font-size: em(30px);	
 }
