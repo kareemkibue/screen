@@ -1,23 +1,28 @@
+$base-font-size: 40px;
+
 @import "vendor/normalize-css/normalize";
 @import "compass/css3";
 @import "custom/media";
-// @import "custom/custom-mixins";
+@import "custom/custom-mixins";
 // @import "custom/custom-classes";
 
+@include set-box-sizing;
+
 body{
-	font-size: 128px;
+	font-size: $base-font-size;
 	background: #fff;
 	font-weight: 600;
 	font-family: "Open Sans", "Helvetica";
+	line-height: 1.5;
 
 	@include respond-max(580px){
-		font-size: 100px;
+		font-size: 30px;
 	}
 	@include respond(screen-xxs){
-		font-size: 80px;	
+		font-size: 20px;	
 	}
 	@include respond-max(360px){
-		font-size: 60px;
+		font-size: 18px;
 	}
 }
 
@@ -41,6 +46,20 @@ body{
 	}
 }
 
-.wrapper .content > span{
-	font-size: 80%;
+.wrapper .content{
+	font-size: em(128px);
+
+	/* @include respond-max(580px){
+		font-size: 100px;
+	}
+	@include respond(screen-xxs){
+		font-size: 80px;	
+	}
+	@include respond-max(360px){
+		font-size: 60px;
+	} */
+
+	> span{
+		font-size: 80%;
+	}
 }
