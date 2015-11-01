@@ -17,6 +17,7 @@ function renderInfo(){
 	// info += 'Operating System: <strong>Android</strong>' + '<br>';
 	// info += 'Browser: <strong>Firefox v42.0.5</strong>' + '<br>';
 	// info += 'This is <strong>NOT</strong> a touch device';
+	// info += 'This is resolution mimics the a QHD Screen, Samsung Galaxy Tab and the iPad 3';	
 	$('#info').html( info );
 }
 
