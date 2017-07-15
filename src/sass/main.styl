@@ -1,0 +1,118 @@
+/*Variables*/
+
+$base-font-size: 40px;
+
+/*Mixins*/
+
+@mixin respond($media) {
+    @if $media==screen-lg {
+        @media only screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $media==screen-md {
+        @media only screen and (max-width: 1199px) {
+            @content;
+        }
+    }
+    @else if $media==screen-sm {
+        @media only screen and (max-width: 991px) {  
+            @content;   
+        }
+    }
+    @else if $media==screen-xs {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $media==screen-xxs {
+        @media only screen and (max-width: 480px) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-max($screen-width) {
+    @media only screen and (max-width: $screen-width) {
+        @content;
+    }
+}
+
+@mixin respond-min($screen-width) {
+    @media only screen and (min-width: $screen-width) {
+        @content;
+    }
+}
+
+
+/*Config*/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+/*Containers, Wrappers*/
+
+body {
+    font-size: $base-font-size;
+    background: #fff;
+    font-weight: 600;
+    font-family: "Roboto", serif;
+    line-height: 1.8;
+    @include respond-max(580px) {
+        font-size: 30px;
+    }
+    @include respond(screen-xxs) {
+        font-size: 20px;
+    }
+    @include respond-max(360px) {
+        font-size: 18px;
+    }
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    & > div {
+        display: table;
+        width: 100%;
+        height: 100%;
+        & > div {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+    }
+}
+
+.wrapper .content {
+    font-size: em(128px);
+    line-height: 1.2;
+    > span {
+        font-size: 80%;
+    }
+}
+
+.wrapper .dimensions-legend {
+    display: block;
+    font-size: em(22px);
+    font-style: italic;
+}
+
+.wrapper .info {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-top: 20px;
+    font-size: em(20px);
+    @include respond-max(560px) {
+        font-size: em(30px);
+    }
+}
