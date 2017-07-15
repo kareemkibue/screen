@@ -1,6 +1,6 @@
 /*Variables*/
 
-$font-size = 16px
+$font-size = 32px
 $font-family = "Roboto", serif
 
 /*Mixins*/
@@ -42,7 +42,7 @@ em($targetFontSize, $baseFontSize = $font-size)
 /*Config*/
 
 *, *:before, *:after 
-    box-sizing: border-box;
+    box-sizing border-box
 
 
 
@@ -50,53 +50,45 @@ em($targetFontSize, $baseFontSize = $font-size)
 
 body 
     font: 300 $font-size $font-family 
-    background: #fff
-    line-height: 1.8
+    background #fff
+    line-height 1.8
     
     +respond-max(580px) 
-        font-size: 30px    
+        font-size 30px    
     +respond(screen-xxs)
-        font-size: 20px    
+        font-size 20px    
     +respond-max(360px) 
-        font-size: 18px
+        font-size 18px
 
-.wrapper 
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    & > div 
-        display: table
-        width: 100%
-        height: 100%
-        & > div 
-            display: table-cell
-            vertical-align: middle
-            text-align: center
+.page-wrapper 
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    display flex    
 
-.wrapper .content 
-    font-size: em(128px)
-    line-height: 1.2
-    > span 
-        // font-size: 80%
-    
+.device-vw
+    margin auto
+    text-align center
+    .dimensions 
+        display block
+        font-size em(128px)
+        line-height 1.2
+    .legend 
+        display block
+        font-size em(22px)
 
-
-.wrapper .dimensions-legend 
-    display: block
-    font-size: em(22px)
-    font-style: italic
-
-
-.wrapper .info 
-    position: absolute
-    bottom: 20px
-    left: 0
-    right: 0
-    margin-top: 20px
-    font-size: em(20px)
+.device-info 
+    position absolute
+    bottom 20px
+    left 0
+    right 0
+    margin-top 20px
+    font-size em(20px)
+    display flex
+    justify-content center
   
     +respond-max(560px) 
-        font-size: em(30px)
+        font-size em(30px)
     

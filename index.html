@@ -6,8 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 <title>Browser Viewport</title>
 
-<link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
-<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 <script>
     WebFont.load( {
@@ -16,18 +14,21 @@
         }
     } );
 </script>
+<link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div>
-            <div>
-                <div>Your Browser Viewport is</div>
-                <span id="dimensions" class="content"></span>
-                <span class="dimensions-legend">(Width x Height in pixels)</span>
-                <div id="info" class="info"></div>
-            </div>
+    <div class="page-wrapper">
+
+        <div class="device-vw">
+            <span>Your Browser Viewport is</span>
+            <span id="dimensions" class="dimensions"></span>
+            <span class="legend"><em>(Width x Height in pixels)</em></span>
         </div>
+
+        <div id="deviceInfo" class="device-info"></div>
+
     </div>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
