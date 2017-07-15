@@ -1,6 +1,7 @@
 /*Variables*/
 
-$font-size= 40px;
+$font-size = 16px
+$font-family = "Roboto", serif
 
 /*Mixins*/
 
@@ -35,8 +36,8 @@ respond-min($screen-width)
         { block }
     
 
-em($target-font-size, $base-font-size = $font-size)    
-    return $target-font-size / $base-font-size + 0em
+em($targetFontSize, $baseFontSize = $font-size)    
+    return unit($targetFontSize / $baseFontSize, 'em')
 
 /*Config*/
 
@@ -48,10 +49,8 @@ em($target-font-size, $base-font-size = $font-size)
 /*Containers, Wrappers*/
 
 body 
-    font-size: $font-size;
+    font: 300 $font-size $font-family 
     background: #fff
-    font-weight: 600
-    font-family: "Roboto", serif
     line-height: 1.8
     
     +respond-max(580px) 
@@ -80,7 +79,7 @@ body
     font-size: em(128px)
     line-height: 1.2
     > span 
-        font-size: 80%
+        // font-size: 80%
     
 
 
