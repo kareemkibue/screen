@@ -1,11 +1,14 @@
 /*Gulp*/
-var gulp = require( 'gulp' );
-var webserver = require( 'gulp-webserver' );
-var concat = require( "gulp-concat" );
+let gulp = require( 'gulp' );
+let webserver = require( 'gulp-webserver' );
+let concat = require( "gulp-concat" );
+let ftp = require( 'vinyl-ftp' );
+let debug = require( 'gulp-debug' );
+let fs = require( 'fs' );
 /*SASS/CSS*/
-var stylus = require( 'gulp-stylus' );
+let stylus = require( 'gulp-stylus' );
 /*JS*/
-var babel = require( "gulp-babel" );
+let babel = require( "gulp-babel" );
 
 gulp.task( 'serve', function() {
     gulp.src( './' )
@@ -34,6 +37,26 @@ gulp.task( 'js', function() {
         .pipe( babel() )
         .pipe( concat( "main.js" ) )
         .pipe( gulp.dest( './scripts' ) );
+} );
+
+gulp.task( 'ftp', function() {
+    var ftpConfig = JSON.parse( fs.readFileSync( './ftp.json' ) );
+    var conn = ftp.create( ftpConfig );
+
+    var globs = [
+        'index.html',
+        'scripts/**',
+        'stylesheets/**',
+    ];
+
+    return gulp.src( globs, {
+            base: '.',
+            buffer: false
+        } )
+        .pipe( debug() )
+        .pipe( conn.newer( '/screen/' ) )
+        .pipe( conn.dest( '/screen/' ) );
+
 } );
 
 gulp.task( 'build', [ 'js', 'css' ] );

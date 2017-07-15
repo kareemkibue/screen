@@ -13,9 +13,11 @@
         "gulp-autoprefixer": "^4.0.0",
         "gulp-babel": "^6.1.2",
         "gulp-concat": "^2.6.1",
+        "gulp-debug": "^3.1.0",
         "gulp-sourcemaps": "^2.6.0",
         "gulp-stylus": "^2.6.0",
         "gulp-webserver": "^0.9.1",
-        "stylus": "^0.54.5"
+        "stylus": "^0.54.5",
+        "vinyl-ftp": "^0.6.0"
     }
 }
