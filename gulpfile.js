@@ -19,18 +19,18 @@ gulp.task( 'serve', function() {
 } );
 
 gulp.task( 'watch', function() {
-    gulp.watch( '/src/sass/*.styl', [ 'css' ] );
-    gulp.watch( '/src/js/**/*.js', [ 'js' ] );
+    gulp.watch( './src/sass/main.styl', [ 'css' ] );
+    gulp.watch( './src/js/**/*.js', [ 'js' ] );
 } );
 
 gulp.task( 'css', function() {
-    return gulp.src( '/src/sass/main.styl' )
+    return gulp.src( './src/sass/main.styl' )
         .pipe( stylus() )
         .pipe( gulp.dest( './stylesheets' ) );
 } );
 
 gulp.task( 'js', function() {
-    return gulp.src( '/src/**/*.js' )
+    return gulp.src( './src/**/*.js' )
         .pipe( babel() )
         .pipe( concat( "main.js" ) )
         .pipe( gulp.dest( './scripts' ) );
