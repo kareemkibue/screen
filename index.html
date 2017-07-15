@@ -1,28 +1,38 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-	<title>Browser Viewport</title>
 
-	<link rel="stylesheet" type="text/css" href="styles/screen.css">
-	<script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
-	<script src="scripts/screen-webfont.js"></script>	
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>Browser Viewport</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+<script>
+    WebFont.load( {
+        google: {
+            families: [ 'Roboto:300,400,500,600,700' ]
+        }
+    } );
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 </head>
 
 <body>
-	<div class="wrapper">
-		<div>
-			<div>
-				<div>Your Browser Viewport is</div>
-				<span id="dimensions" class="content"></span>
-				<span class="dimensions-legend">(Width x Height in pixels)</span>
-				<div id="info" class="info"></div>
-			</div>
-		</div>
-	</div>
+    <div class="page-wrapper">
 
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="scripts/screen.js"></script>	
+        <div class="device-vw">
+            <span>Your Browser Viewport is</span>
+            <span id="dimensions" class="dimensions"></span>
+            <span class="legend"><em>(Width x Height in pixels)</em></span>
+        </div>
+
+        <div id="deviceInfo" class="device-info"></div>
+        <!-- version: 0.3.0  -->
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
+
 </html>

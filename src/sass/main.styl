@@ -1,0 +1,101 @@
+/*Variables*/
+
+$font-size = 32px
+$font-family = "Roboto", serif
+
+/*Mixins*/
+
+respond($media) 
+    if $media==screen-lg 
+        @media only screen and (min-width: 1200px) 
+            { block }
+    
+    else if $media==screen-md 
+        @media only screen and (max-width: 1199px) 
+            { block }
+    
+    else if $media==screen-sm 
+        @media only screen and (max-width: 991px) 
+            { block }
+
+    else if $media==screen-xs
+        @media only screen and (max-width: 767px) 
+            { block }
+    
+    else if $media==screen-xxs 
+        @media only screen and (max-width: 480px) 
+            { block }    
+
+
+respond-max($screen-width) 
+    @media only screen and (max-width: $screen-width) 
+        { block }
+
+respond-min($screen-width) 
+    @media only screen and (min-width: $screen-width) 
+        { block }
+    
+
+em($targetFontSize, $baseFontSize = $font-size)    
+    return unit($targetFontSize / $baseFontSize, 'em')
+
+/*Config*/
+
+*, *:before, *:after 
+    box-sizing border-box
+
+
+
+/*Containers, Wrappers*/
+
+body 
+    font: 300 $font-size $font-family 
+    background #fff
+    line-height 1.8
+    
+    +respond-max(580px) 
+        font-size 30px    
+    +respond(screen-xxs)
+        font-size 20px    
+    +respond-max(360px) 
+        font-size 18px
+
+.page-wrapper 
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    display flex    
+    opacity 0
+    transform scale(0)
+    transition .5s ease .1s
+    &.show{
+        opacity 1
+        transform scale(1)
+    }
+
+.device-vw
+    margin auto
+    text-align center
+    .dimensions 
+        display block
+        font-size em(128px)
+        line-height 1.2
+    .legend 
+        display block
+        font-size em(22px)
+
+.device-info 
+    position absolute
+    bottom 20px
+    left 0
+    right 0
+    margin-top 20px
+    font-size em(20px)
+    display flex
+    justify-content center
+  
+    +respond-max(560px) 
+        font-size em(30px)
+    
