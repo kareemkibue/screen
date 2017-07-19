@@ -21,7 +21,6 @@ ftp.json
 Stylesheets/
 Scripts/
 css/
-js/
 *.map
 
 #Log files
