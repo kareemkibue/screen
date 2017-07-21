@@ -12,6 +12,8 @@ node_modules/
 .RESOURCES/
 ui/sass/vendor/
 ftp.json
+yarn.lock
+package-lock.json
 
 #Conflict files
 *.orig
