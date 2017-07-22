@@ -3,6 +3,11 @@
 $font-size = 32px
 $font-family = "Roboto", serif
 
+/*Classes*/
+$full-screen
+    background black
+    color white
+
 /*Mixins*/
 
 respond($media) 
@@ -110,4 +115,16 @@ body
   
     +respond-max(560px) 
         font-size em(30px)
+    
+/* Full Screen Window  */
+:-webkit-full-screen
+    background black
+    color white
+:-ms-fullscreen
+    background black
+    color white
+:-moz-full-screen
+    background black
+    color white
+
     
