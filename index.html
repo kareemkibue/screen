@@ -20,6 +20,16 @@
 
 <body>
     <div class="page-wrapper">
+
+        <div class="device-vw">
+            <span>Your Browser Viewport is</span>
+            <span id="dimensions" class="dimensions"></span>
+            <span class="legend"><em>(Width x Height in pixels)</em></span>
+        </div>
+
+        <div id="deviceInfo" class="device-info"></div>
+        <!-- version: 0.3.0  -->
+
         <button id="toggleFullScreen" class="btn-fullscreen" type="button">
             <svg x="0px" y="0px" viewBox="0 0 473.7 473.7" style="enable-background:new 0 0 473.7 473.7;" xml:space="preserve">
                 <path d="M236.8,0C106,0,0,106,0,236.8s106,236.8,236.8,236.8s236.8-106,236.8-236.8S367.6,0,236.8,0z M392.6,116.4
@@ -38,15 +48,8 @@
             </svg>
         </button>
 
-        <div class="device-vw">
-            <span>Your Browser Viewport is</span>
-            <span id="dimensions" class="dimensions"></span>
-            <span class="legend"><em>(Width x Height in pixels)</em></span>
-        </div>
-
-        <div id="deviceInfo" class="device-info"></div>
-        <!-- version: 0.3.0  -->
     </div>
+    <!-- .page-wrapper -->
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="scripts/main.js"></script>

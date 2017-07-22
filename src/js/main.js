@@ -86,6 +86,33 @@ function getHeight() {
 
 } */
 
+function enterFullScreen() {
+    var page = document.documentElement;
+    if ( page.requestFullscreen ) page.requestFullscreen();
+    else if ( page.mozRequestFullScreen ) page.mozRequestFullScreen();
+    else if ( page.webkitRequestFullscreen ) page.webkitRequestFullscreen();
+    else if ( page.msRequestFullscreen ) page.msRequestFullscreen();
+}
+
+function exitFullScreen() {
+    if ( document.exitFullscreen ) page.exitFullscreen();
+    else if ( document.mozCancelFullScreen ) document.mozCancelFullScreen();
+    else if ( document.webkitExitFullscreen ) document.webkitExitFullscreen();
+    else if ( document.msExitFullscreen ) document.msExitFullscreen();
+
+}
+
+function isFullScreen() {
+    return ( window.fullScreen ) || ( window.innerWidth == screen.width && window.innerHeight == screen.height );
+}
+
+$( '#toggleFullScreen' ).click( function() {
+    if ( !isFullScreen() )
+        enterFullScreen();
+    else
+        exitFullScreen();
+} );
+
 $( window ).load( function() {
     ( function( i, s, o, g, r, a, m ) {
         i[ 'GoogleAnalyticsObject' ] = r;
