@@ -113,6 +113,11 @@ $( '#toggleFullScreen' ).click( function() {
         exitFullScreen();
 } );
 
+function isMobile() {
+    var userAgent = navigator.userAgent.match( /Android/i ) || navigator.userAgent.match( /BlackBerry/i ) || navigator.userAgent.match( /iPhone|iPad|iPod/i ) || navigator.userAgent.match( /Opera Mini/i ) || navigator.userAgent.match( /IEMobile/i );
+    return userAgent;
+}
+
 $( window ).load( function() {
     ( function( i, s, o, g, r, a, m ) {
         i[ 'GoogleAnalyticsObject' ] = r;
