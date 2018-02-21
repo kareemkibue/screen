@@ -10,7 +10,7 @@ node_modules/
 .sass-cache/
 .tscache/
 .RESOURCES/
-ui/sass/vendor/
+dist/
 ftp.json
 yarn.lock
 package-lock.json
